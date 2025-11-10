@@ -1,0 +1,125 @@
+{
+  "tech_stack": [
+    "JavaScript",
+    "React 18",
+    "Ant Design",
+    "Styled Components",
+    "Framer Motion",
+    "Zustand",
+    "React Router v6",
+    "Supabase",
+    "PostgreSQL",
+    "Axios",
+    "Day.js"
+  ],
+  "features": [
+    {
+      "name": "Authentication System",
+      "description": "Complete user authentication with email/password login, registration, OAuth integration, JWT tokens, and protected routes",
+      "files": [
+        "src/pages/Auth/LoginPage.js",
+        "src/pages/Auth/RegisterPage.js",
+        "src/components/Layout/AuthLayout.js",
+        "src/hooks/useAuth.js",
+        "src/store/index.js"
+      ]
+    },
+    {
+      "name": "Landing Page",
+      "description": "Modern landing page with hero section, feature showcase, statistics, testimonials, and call-to-action",
+      "files": ["src/pages/LandingPage.js"]
+    },
+    {
+      "name": "User Dashboard",
+      "description": "Personal user dashboard with booking statistics, recent bookings, booking trends chart, and quick actions",
+      "files": ["src/pages/Dashboard/DashboardPage.js"]
+    },
+    {
+      "name": "Hotels Browsing",
+      "description": "Browse and search hotels with filters, view hotel details, ratings, amenities, and navigate to available rooms",
+      "files": ["src/pages/Hotels/HotelsPage.js"]
+    },
+    {
+      "name": "Rooms Management",
+      "description": "View available rooms with search filters for dates, guests, room types, view room details and pricing",
+      "files": [
+        "src/pages/Rooms/RoomsPage.js",
+        "src/pages/Rooms/RoomDetailsPage.js"
+      ]
+    },
+    {
+      "name": "Advanced Booking System",
+      "description": "Complete booking workflow with real-time availability checking, dynamic pricing (weekend/holiday rates), guest information forms, and booking confirmation",
+      "files": [
+        "src/pages/Booking/AdvancedBookingPage.js",
+        "src/pages/Booking/BookingPage.js",
+        "src/pages/Booking/BookingConfirmationPage.js",
+        "src/lib/bookingService.js"
+      ]
+    },
+    {
+      "name": "User Bookings Management",
+      "description": "View and manage user reservations with status tracking (upcoming, current, past, cancelled), booking details, and cancellation functionality",
+      "files": ["src/pages/Booking/UserBookingsPage.js"]
+    },
+    {
+      "name": "User Profile",
+      "description": "User profile management with account settings and personal information",
+      "files": ["src/pages/Profile/ProfilePage.js"]
+    },
+    {
+      "name": "Reservations",
+      "description": "Comprehensive reservation management system",
+      "files": ["src/pages/Reservations/ReservationsPage.js"]
+    },
+    {
+      "name": "Admin Dashboard",
+      "description": "Administrative panel for hotel and system management",
+      "files": ["src/pages/Admin/AdminDashboard.js"]
+    },
+    {
+      "name": "Main Layout System",
+      "description": "Responsive main layout with header, sidebar navigation, user menu, theme switching, and notifications",
+      "files": ["src/components/Layout/MainLayout.js"]
+    },
+    {
+      "name": "Theme System",
+      "description": "Dark/light theme switching with consistent color schemes, responsive utilities, and styled component theming",
+      "files": [
+        "src/styles/theme.js",
+        "src/theme/index.js",
+        "src/utils/responsive.js"
+      ]
+    },
+    {
+      "name": "State Management",
+      "description": "Global state management with Zustand for authentication, hotels, rooms, reservations, and UI state",
+      "files": ["src/store/index.js"]
+    },
+    {
+      "name": "API Integration",
+      "description": "Backend API integration with Spring Boot endpoints for authentication, hotels, rooms, and reservations",
+      "files": ["src/lib/api.js"]
+    },
+    {
+      "name": "Supabase Integration",
+      "description": "Database integration with Supabase for real-time data, authentication, and PostgreSQL database",
+      "files": ["src/lib/supabase.js", "src/database/schema.sql"]
+    },
+    {
+      "name": "Booking Service",
+      "description": "Advanced booking service with availability checking, dynamic pricing calculation, booking creation, and reference generation",
+      "files": ["src/lib/bookingService.js"]
+    },
+    {
+      "name": "Responsive Design",
+      "description": "Mobile-first responsive design with breakpoint utilities and adaptive layouts",
+      "files": ["src/utils/responsive.js"]
+    },
+    {
+      "name": "Application Routing",
+      "description": "Client-side routing with React Router including protected routes and authentication guards",
+      "files": ["src/App.js"]
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+[
+  {
+    "id": "TC001",
+    "title": "User Registration with Valid Email and Password",
+    "description": "Verify that a new user can successfully register using a valid email and strong password.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the registration page"
+      },
+      {
+        "type": "action",
+        "description": "Input a valid email address and a strong password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that registration is successful and user is redirected to authenticated area or login page"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "User Registration with Invalid Email Format",
+    "description": "Verify that the system correctly rejects registration attempts with invalid email formats and displays an appropriate error.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the registration page"
+      },
+      {
+        "type": "action",
+        "description": "Input an invalid email format and a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that registration is rejected and an error message regarding invalid email format is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "User Login with Correct Credentials",
+    "description": "Verify that users can log in successfully using correct email and password credentials.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter a registered email address and correct password"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that user is authenticated and redirected to the dashboard or home page"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "User Login with Incorrect Password",
+    "description": "Verify login fails with an incorrect password and an appropriate error message is shown.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid registered email address and an incorrect password"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that login is rejected and an error message about invalid credentials is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "User Login via Google OAuth",
+    "description": "Verify users can authenticate successfully using Google OAuth integration.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Click the 'Login with Google' OAuth button"
+      },
+      {
+        "type": "action",
+        "description": "Complete OAuth flow with Google account"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify user is authenticated, JWT tokens are issued, and redirected to the authenticated area"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Session Persistence After Login",
+    "description": "Verify that the user's session persists after closing and reopening the browser until explicit logout.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in successfully with valid credentials"
+      },
+      {
+        "type": "action",
+        "description": "Close the browser window"
+      },
+      {
+        "type": "action",
+        "description": "Reopen the browser and navigate to an authenticated route"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the user remains logged in and has access without needing to log in again"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Logout Functionality",
+    "description": "Verify that logging out clears the session and redirects user to the public landing page.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in successfully"
+      },
+      {
+        "type": "action",
+        "description": "Click the logout button or link"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the user session is cleared and the user is redirected to the landing page"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Access Protected Route Without Authentication",
+    "description": "Verify that unauthenticated users are redirected to login page when accessing protected routes.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate directly to a protected route such as user dashboard or booking management"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm redirection to the login page"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Hotel Search with Valid Filters",
+    "description": "Validate that searching hotels by name and location filters returns accurate matched results promptly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to hotels browsing page"
+      },
+      {
+        "type": "action",
+        "description": "Input a valid hotel name or location in the search/filter fields"
+      },
+      {
+        "type": "action",
+        "description": "Trigger the search action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the results accurately reflect hotels matching search criteria with real-time load indications"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Hotel Search with No Matching Results",
+    "description": "Verify the system gracefully handles searches that yield no matching hotels.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Search with a random or misspelled hotel name unlikely to match any records"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the display of appropriate 'no results found' message and no errors occur"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "View Hotel Details Including Amenities and Ratings",
+    "description": "Verify the hotel detailed view shows all relevant amenities, ratings, and other information correctly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Select a hotel from the list"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the hotel's detail page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check amenities, ratings, reviews, and hotel description are displayed accurately"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Room Filtering by Date, Guest Count, and Room Type",
+    "description": "Verify that the room list filters correctly based on user input for check-in and check-out dates, number of guests, and room type.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to rooms browsing page"
+      },
+      {
+        "type": "action",
+        "description": "Select check-in and check-out dates using date picker"
+      },
+      {
+        "type": "action",
+        "description": "Input number of guests and select room type filters"
+      },
+      {
+        "type": "action",
+        "description": "Apply filters"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that rooms displayed match the filter criteria and show updated availability status"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "View Room Details with Dynamic Pricing Display",
+    "description": "Ensure that room details page shows appropriate room information and dynamic pricing including weekend and holiday rates.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Select a room from the filtered list"
+      },
+      {
+        "type": "action",
+        "description": "Open the room details page"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm room amenities, capacity, and price details including applicable dynamic pricing factors are correctly displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Complete Booking with Valid Guest Information and Date Availability",
+    "description": "Test successful booking of a room with valid guest details where room is available for selected dates.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Select available room and desired dates"
+      },
+      {
+        "type": "action",
+        "description": "Enter valid guest information in the booking form"
+      },
+      {
+        "type": "action",
+        "description": "Review price breakdown including dynamic pricing"
+      },
+      {
+        "type": "action",
+        "description": "Submit booking"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify booking confirmation with unique reference code and updated availability"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Booking Attempt with Unavailable Room Dates",
+    "description": "Verify the system prevents booking of rooms unavailable on selected dates and displays appropriate feedback.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Choose room with dates that have been booked previously or blocked"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to complete booking with valid guest details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify booking is rejected with a clear message about unavailable dates and user cannot proceed"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Booking Cancellation for Eligible Reservation",
+    "description": "Verify user can cancel reservations that are eligible for cancellation and receives confirmation feedback.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to user's bookings management page"
+      },
+      {
+        "type": "action",
+        "description": "Select a booking with status 'upcoming' or 'current' subject to cancellation policy"
+      },
+      {
+        "type": "action",
+        "description": "Click 'Cancel booking' and confirm action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify booking status updates to 'cancelled' and user sees a cancellation confirmation message"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Booking Cancellation Attempt for Non-Cancellable Past Booking",
+    "description": "Verify that cancellation option is disabled or blocked for past or already cancelled bookings.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to bookings management page"
+      },
+      {
+        "type": "action",
+        "description": "Select a past booking or booking already marked cancelled"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure the cancellation action/button is disabled or not present and user is informed appropriately"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Booking Management View Filtering by Status",
+    "description": "Verify user can filter bookings by upcoming, current, past, and cancelled statuses and view updated lists.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to bookings management page"
+      },
+      {
+        "type": "action",
+        "description": "Select each booking status filter option sequentially"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the booking list updates correctly matching the selected filter each time"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Personal User Dashboard Displays Booking Statistics and Trends",
+    "description": "Validate that dashboard loads and shows accurate booking counts, recent activity, and trend visualizations.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as a user with multiple bookings"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to user dashboard page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that booking statistics, recent bookings list, and graphical trend charts render correctly and data is consistent"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Responsive Layout and Theme Switching Consistency",
+    "description": "Verify the main layout adapts properly across devices (desktop, tablet, mobile) and theme switching applies globally.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the application on multiple screen sizes or simulate device sizes"
+      },
+      {
+        "type": "action",
+        "description": "Use the theme switcher to toggle between light and dark themes"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure layout is responsive with no UI breakage and theme colors apply consistently across all components"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Real-time Data Updates on Booking Status Changes",
+    "description": "Verify that changes, such as cancellation or new bookings, update relevant views in real-time via Supabase integration.",
+    "category": "integration",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open booking management page in one browser session"
+      },
+      {
+        "type": "action",
+        "description": "Perform booking creation or cancellation from another session or user"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the booking list updates in real-time without manual refresh"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Form Validation on Guest Information During Booking",
+    "description": "Verify that guest information forms enforce required fields and show validation errors for incorrect or missing data.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to booking guest information form"
+      },
+      {
+        "type": "action",
+        "description": "Submit form with missing or invalid fields (e.g., empty name, invalid phone)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are displayed appropriately and booking cannot proceed"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Admin Dashboard Access Control",
+    "description": "Verify that only users with admin roles can access the admin dashboard and others are redirected or shown error.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as a non-admin user"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to navigate to the admin dashboard URL"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify access is denied or user is redirected to forbidden or home page"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "Notifications System Displays Alerts Correctly",
+    "description": "Verify that the main layout's notifications area displays alert messages consistently for booking actions and errors.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Perform actions that trigger notifications (e.g., successful booking, cancellation, validation errors)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify notifications appear with correct messages and disappear as designed"
+      }
+    ]
+  }
+]

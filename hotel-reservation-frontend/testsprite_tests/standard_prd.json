@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "project": "Hotel Reservation System",
+    "date": "2025-10-20",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "A comprehensive hotel reservation platform enabling users to search and book hotel rooms, manage their bookings, and access a personalized dashboard, complete with secure authentication and administrative capabilities.",
+  "core_goals": [
+    "Enable users to securely register and log in via email/password or OAuth.",
+    "Provide a seamless hotel and room browsing experience with advanced search and filtering.",
+    "Allow users to book rooms with real-time availability and dynamic pricing.",
+    "Offer user-friendly management of bookings with detailed views and cancellation options.",
+    "Present a personalized dashboard displaying booking statistics and trends.",
+    "Ensure responsive design and accessibility across devices.",
+    "Maintain robust protected routes enforcing authentication and session management."
+  ],
+  "key_features": [
+    "Complete authentication system with email/password login, registration, OAuth integration, JWT-based secured routes, and session persistence.",
+    "Modern landing page with hero section, feature highlights, and call-to-action components.",
+    "Hotel browsing with search, filters, detailed views including amenities and ratings.",
+    "Rooms browsing with filters for dates, guests, room types, and detailed room information.",
+    "Advanced booking workflow featuring real-time availability checks, dynamic pricing including weekend and holiday rates, guest information collection, and booking confirmation with unique reference generation.",
+    "User booking management with status tracking (upcoming, current, past, cancelled), cancellation options, and real-time updates.",
+    "Personal user dashboard showing booking stats, recent bookings, trend visualizations, and quick navigation actions.",
+    "Admin dashboard for hotel and system management.",
+    "Responsive main layout with theme switching, notifications, and user navigation.",
+    "State management via Zustand to handle authentication, UI state, and domain data efficiently.",
+    "Integration with Supabase and backend API for data real-time updates and persistence."
+  ],
+  "user_flow_summary": [
+    "User registers or logs in securely via email/password or Google OAuth, then is granted access to authenticated areas.",
+    "User browses hotels by name or location using search and filter tools, views hotel details, and selects rooms for booking.",
+    "User searches for available rooms by date, guest count, and room type, viewing dynamic pricing and availability updated in real-time.",
+    "User completes booking by entering guest details, reviewing price breakdown, and receiving a unique booking confirmation and reference.",
+    "User manages existing bookings, viewing details, filtering by status, and cancelling eligible reservations with confirmation feedback.",
+    "User accesses the personalized dashboard to see booking statistics, recent activity, and trends visualized in charts, and uses quick actions to navigate.",
+    "Admin users access the admin dashboard for system management.",
+    "Users experience responsive design and theme changes for optimal usability across devices."
+  ],
+  "validation_criteria": [
+    "Authentication flows enforce secure validation, display appropriate error/success messages, and maintain session persistence including logout functionality.",
+    "Hotel and room search return accurate filtered results with real-time availability and loading states.",
+    "Booking process validates guest information, applies dynamic pricing correctly, and provides unique booking references with confirmation display and email (if applicable).",
+    "Booking management UI displays updated booking statuses and supports cancellation with business rules and feedback dialogs.",
+    "Dashboard displays accurate statistics and trends based on user data with robust responsive chart rendering.",
+    "Protected routes restrict unauthenticated access and redirect appropriately.",
+    "All interactive elements and forms validate input consistently and handle errors gracefully.",
+    "Application UI is responsive and theme switching applies consistently across all components."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "JavaScript",
+      "React 18",
+      "Ant Design",
+      "Styled Components",
+      "Framer Motion",
+      "Zustand",
+      "React Router v6",
+      "Supabase",
+      "PostgreSQL",
+      "Axios",
+      "Day.js"
+    ],
+    "features": [
+      {
+        "name": "Authentication System",
+        "description": "Complete user authentication with email/password login, registration, OAuth integration, JWT tokens, and protected routes",
+        "files": [
+          "src/pages/Auth/LoginPage.js",
+          "src/pages/Auth/RegisterPage.js",
+          "src/components/Layout/AuthLayout.js",
+          "src/hooks/useAuth.js",
+          "src/store/index.js"
+        ]
+      },
+      {
+        "name": "Landing Page",
+        "description": "Modern landing page with hero section, feature showcase, statistics, testimonials, and call-to-action",
+        "files": [
+          "src/pages/LandingPage.js"
+        ]
+      },
+      {
+        "name": "User Dashboard",
+        "description": "Personal user dashboard with booking statistics, recent bookings, booking trends chart, and quick actions",
+        "files": [
+          "src/pages/Dashboard/DashboardPage.js"
+        ]
+      },
+      {
+        "name": "Hotels Browsing",
+        "description": "Browse and search hotels with filters, view hotel details, ratings, amenities, and navigate to available rooms",
+        "files": [
+          "src/pages/Hotels/HotelsPage.js"
+        ]
+      },
+      {
+        "name": "Rooms Management",
+        "description": "View available rooms with search filters for dates, guests, room types, view room details and pricing",
+        "files": [
+          "src/pages/Rooms/RoomsPage.js",
+          "src/pages/Rooms/RoomDetailsPage.js"
+        ]
+      },
+      {
+        "name": "Advanced Booking System",
+        "description": "Complete booking workflow with real-time availability checking, dynamic pricing (weekend/holiday rates), guest information forms, and booking confirmation",
+        "files": [
+          "src/pages/Booking/AdvancedBookingPage.js",
+          "src/pages/Booking/BookingPage.js",
+          "src/pages/Booking/BookingConfirmationPage.js",
+          "src/lib/bookingService.js"
+        ]
+      },
+      {
+        "name": "User Bookings Management",
+        "description": "View and manage user reservations with status tracking (upcoming, current, past, cancelled), booking details, and cancellation functionality",
+        "files": [
+          "src/pages/Booking/UserBookingsPage.js"
+        ]
+      },
+      {
+        "name": "User Profile",
+        "description": "User profile management with account settings and personal information",
+        "files": [
+          "src/pages/Profile/ProfilePage.js"
+        ]
+      },
+      {
+        "name": "Reservations",
+        "description": "Comprehensive reservation management system",
+        "files": [
+          "src/pages/Reservations/ReservationsPage.js"
+        ]
+      },
+      {
+        "name": "Admin Dashboard",
+        "description": "Administrative panel for hotel and system management",
+        "files": [
+          "src/pages/Admin/AdminDashboard.js"
+        ]
+      },
+      {
+        "name": "Main Layout System",
+        "description": "Responsive main layout with header, sidebar navigation, user menu, theme switching, and notifications",
+        "files": [
+          "src/components/Layout/MainLayout.js"
+        ]
+      },
+      {
+        "name": "Theme System",
+        "description": "Dark/light theme switching with consistent color schemes, responsive utilities, and styled component theming",
+        "files": [
+          "src/styles/theme.js",
+          "src/theme/index.js",
+          "src/utils/responsive.js"
+        ]
+      },
+      {
+        "name": "State Management",
+        "description": "Global state management with Zustand for authentication, hotels, rooms, reservations, and UI state",
+        "files": [
+          "src/store/index.js"
+        ]
+      },
+      {
+        "name": "API Integration",
+        "description": "Backend API integration with Spring Boot endpoints for authentication, hotels, rooms, and reservations",
+        "files": [
+          "src/lib/api.js"
+        ]
+      },
+      {
+        "name": "Supabase Integration",
+        "description": "Database integration with Supabase for real-time data, authentication, and PostgreSQL database",
+        "files": [
+          "src/lib/supabase.js",
+          "src/database/schema.sql"
+        ]
+      },
+      {
+        "name": "Booking Service",
+        "description": "Advanced booking service with availability checking, dynamic pricing calculation, booking creation, and reference generation",
+        "files": [
+          "src/lib/bookingService.js"
+        ]
+      },
+      {
+        "name": "Responsive Design",
+        "description": "Mobile-first responsive design with breakpoint utilities and adaptive layouts",
+        "files": [
+          "src/utils/responsive.js"
+        ]
+      },
+      {
+        "name": "Application Routing",
+        "description": "Client-side routing with React Router including protected routes and authentication guards",
+        "files": [
+          "src/App.js"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "init",
+  "executionArgs": {
+    "projectName": "hotel-reservation-frontend",
+    "projectPath": "D:/code/Java/codealpha_tasks/HotelReservationSystem/hotel-reservation-frontend",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-Bw24B8a13n7-ocML5BSovVtsR0ToWmSwUoWyZwE5IWn61ORsmgRtGQf0Kne5U8RB4sCnNbY2NyPyVauTvz6Pv9z5V9sOCNqcJ6a9BQtRyNRZt9ib_hZf5LhTTvZz1Nf37ww"
+    }
+  }
+}

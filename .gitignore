@@ -1,0 +1,64 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Logs ###
+logs/
+*.log
+*.tmp
+
+### Environment files ###
+.env
+.env.local
+.env.development
+.env.production
+
+### Frontend build artifacts ###
+hotel-reservation-frontend/node_modules/
+hotel-reservation-frontend/build/
+hotel-reservation-frontend/.parcel-cache/
+
+### IDE project files ###
+
+### IntelliJ IDEA ###
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Misc ###
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+*.swp
+Thumbs.db
+
+### Mac OS ###
+.DS_Store
